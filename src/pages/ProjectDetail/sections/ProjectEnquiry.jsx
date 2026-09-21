@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Reveal } from "../../../components/Reveal.jsx";
 import { ArrowUpRight, Phone } from "lucide-react";
+import { sendForm } from "../../../lib/formsubmit.js";
 
 const inputCls =
   "w-full rounded-xl border border-[#E7DFC8] bg-white px-4 py-3.5 text-sm text-[#17352D] outline-none transition-colors duration-300 placeholder:text-[#888888] focus:border-[#C9A24A] focus:ring-2 focus:ring-[#C9A24A]/20";
@@ -14,25 +15,52 @@ export default function ProjectEnquiry({ project }) {
     requirement: "",
   });
 
+  const [sending, setSending] = useState(false);
+
   const set = (key) => (e) =>
     setForm((current) => ({
       ...current,
       [key]: e.target.value,
     }));
 
-  const submit = (e) => {
-    e.preventDefault();
-
-    toast.success(
-      `Thank you. Our team will contact you shortly about ${project.title}.`,
-    );
-
+  const resetForm = () => {
     setForm({
       name: "",
       email: "",
       phone: "",
       requirement: "",
     });
+  };
+
+  const submit = async (e) => {
+    e.preventDefault();
+    setSending(true);
+
+    try {
+      await sendForm(
+        {
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          project: project.title,
+          location: [project.location, project.city].filter(Boolean).join(", "),
+          type: project.type,
+          price: project.price,
+          requirement: form.requirement,
+        },
+        `JASL Realty enquiry: ${project.title}`,
+      );
+
+      toast.success(
+        `Thank you. Our team will contact you shortly about ${project.title}.`,
+      );
+
+      resetForm();
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -141,10 +169,14 @@ export default function ProjectEnquiry({ project }) {
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <button
                   type="submit"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A24A] px-8 py-3.5 text-sm font-bold text-[#063D2E] transition hover:-translate-y-0.5 hover:bg-[#A8823D]"
+                  disabled={sending}
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A24A] px-8 py-3.5 text-sm font-bold text-[#063D2E] transition hover:-translate-y-0.5 hover:bg-[#A8823D] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
                 >
-                  Send Enquiry
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  {sending ? "Sending..." : "Send Enquiry"}
+
+                  {!sending && (
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  )}
                 </button>
 
                 {project.contact?.[0] && (

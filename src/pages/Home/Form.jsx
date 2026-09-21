@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
-const FORM_ENDPOINT = "https://formsubmit.co/Sujandutta007@gmail.com";
+import { FORM_ENDPOINT, assertDelivered } from "../../lib/formsubmit.js";
 
 const ENQUIRY_IMAGE =
   "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85";
@@ -30,6 +30,11 @@ export default function Form() {
       if (!response.ok) {
         throw new Error("Form submission failed");
       }
+
+      // HTTP 200 is not enough: FormSubmit reports un-activated inboxes and
+      // rejected submissions inside the JSON body, so verify before telling
+      // the visitor their enquiry was received.
+      await assertDelivered(response);
 
       form.reset();
       setSubmitted(true);

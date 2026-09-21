@@ -13,7 +13,7 @@ export default function AboutIntroduction() {
             PAGE TITLE
             ===================================================== */}
         <Reveal>
-          <h2 className="font-heading text-3xl font-bold leading-tight text-[#063D2E] md:text-4xl">
+          <h2 className="font-heading text-3xl font-bold leading-tight text-forest md:text-4xl">
             About Us
           </h2>
         </Reveal>
@@ -22,14 +22,14 @@ export default function AboutIntroduction() {
             BREADCRUMB
             ===================================================== */}
         <Reveal delay={0.05}>
-          <div className="mt-4 flex items-center gap-2 border border-[#063D2E]/5 bg-[#F4F0E5] px-4 py-3 text-sm">
-            <a href="/" className="text-[#C9A24A] hover:text-[#063D2E]">
+          <div className="mt-4 flex items-center gap-2 border border-forest/5 bg-cream-dark px-4 py-3 text-sm">
+            <a href="/" className="text-gold hover:text-forest">
               Home
             </a>
 
-            <span className="text-[#063D2E]/30">›</span>
+            <span className="text-forest/30">›</span>
 
-            <a href="/about" className="font-medium text-[#063D2E]">
+            <a href="/about" className="font-medium text-forest">
               About Us
             </a>
           </div>
@@ -41,16 +41,18 @@ export default function AboutIntroduction() {
         <Reveal delay={0.1}>
           <div className="mt-5">
             {/* =================================================
-                FIRST CONTENT ROW
-                ================================================= */}
+              FIRST CONTENT ROW
+              ================================================= */}
             <div className="text-[15px] leading-7 text-[#333333] md:text-base md:leading-7">
-              {/* Image floated to the right on desktop */}
-              <div className="ml-0 w-full md:float-right md:ml-7 md:w-[48%] lg:w-[49%]">
-                <div className="overflow-hidden rounded-xl border-2 border-[#C9A24A]">
+              {/* Image floated to the right on desktop.
+                  Container keeps the image's natural 502x539 aspect
+                  ratio so the photo is never awkwardly cropped. */}
+              <div className="ml-0 mb-3 w-full max-w-sm md:float-right md:mx-0 md:ml-7 md:max-w-none md:w-[38%] lg:w-[40%]">
+                <div className="overflow-hidden rounded-xl border-2 border-gold">
                   <img
                     src={hero}
                     alt="JASL Realty"
-                    className="block h-60 w-full object-cover sm:h-75 md:h-80 lg:h-82"
+                    className="block aspect-602/589 w-full object-cover"
                   />
                 </div>
               </div>
@@ -84,15 +86,7 @@ export default function AboutIntroduction() {
                 suit your needs.
               </p>
 
-              {/* Clear the float */}
-              <div className="clear-both" />
-            </div>
-
-            {/* =================================================
-                ADDITIONAL CONTENT BELOW IMAGE
-                ================================================= */}
-            <div className="mt-7 text-[15px] leading-7 text-[#333333] md:text-base md:leading-7">
-              <p>
+              <p className="mt-5">
                 We bring together projects in locations that offer
                 convenience, connectivity and opportunities for future growth.
                 Our approach is centred around making project information
@@ -106,6 +100,9 @@ export default function AboutIntroduction() {
                 and budget before helping you explore the available
                 possibilities.
               </p>
+
+              {/* Clear the float */}
+              <div className="clear-both" />
             </div>
           </div>
         </Reveal>
