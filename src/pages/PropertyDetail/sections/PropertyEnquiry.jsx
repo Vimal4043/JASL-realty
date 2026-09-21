@@ -1,0 +1,166 @@
+import { useState } from "react";
+import { toast } from "sonner";
+import { Reveal } from "../../../components/Reveal.jsx";
+import { ArrowUpRight, Phone } from "lucide-react";
+
+const inputCls =
+  "w-full rounded-xl border border-[#E7DFC8] bg-white px-4 py-3.5 text-sm text-[#17352D] outline-none transition-colors duration-300 placeholder:text-[#888888] focus:border-[#C9A24A] focus:ring-2 focus:ring-[#C9A24A]/20";
+
+export default function PropertyEnquiry({ property }) {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    requirement: "",
+  });
+
+  const set = (key) => (e) =>
+    setForm((current) => ({
+      ...current,
+      [key]: e.target.value,
+    }));
+
+  const submit = (e) => {
+    e.preventDefault();
+
+    toast.success(
+      `Thank you. Our team will contact you shortly about ${property.title}.`,
+    );
+
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      requirement: "",
+    });
+  };
+
+  return (
+    <section
+      data-testid="property-enquiry"
+      className="scroll-mt-12 bg-white px-5 py-8 md:px-10 md:py-12"
+    >
+      <div className="mx-auto max-w-5xl">
+        <Reveal>
+          <div className="overflow-hidden rounded-3xl border border-[#E7DFC8] bg-[#F4F0E5]">
+            <div className="bg-[#063D2E] px-6 py-8 text-white md:px-10 md:py-10">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#C9A24A]">
+                Interested in this home?
+              </p>
+
+              <h3 className="mt-3 font-heading text-3xl font-extrabold md:text-4xl">
+                Enquire About {property.title}
+              </h3>
+
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-white/75 md:text-base">
+                Share your details and our team will contact you with pricing,
+                availability and site visit information.
+              </p>
+            </div>
+
+            <form
+              onSubmit={submit}
+              data-testid="property-enquiry-form"
+              className="p-6 md:p-10"
+            >
+              <div className="grid gap-5 sm:grid-cols-2">
+                <label className="block">
+                  <span className="mb-2 block text-sm font-semibold text-[#063D2E]">
+                    Full Name
+                  </span>
+
+                  <input
+                    type="text"
+                    value={form.name}
+                    onChange={set("name")}
+                    placeholder="Enter your full name"
+                    required
+                    className={inputCls}
+                  />
+                </label>
+
+                <label className="block">
+                  <span className="mb-2 block text-sm font-semibold text-[#063D2E]">
+                    Phone Number
+                  </span>
+
+                  <input
+                    type="tel"
+                    value={form.phone}
+                    onChange={set("phone")}
+                    placeholder="Enter your phone number"
+                    required
+                    className={inputCls}
+                  />
+                </label>
+
+                <label className="block">
+                  <span className="mb-2 block text-sm font-semibold text-[#063D2E]">
+                    Email Address
+                  </span>
+
+                  <input
+                    type="email"
+                    value={form.email}
+                    onChange={set("email")}
+                    placeholder="Enter your email"
+                    required
+                    className={inputCls}
+                  />
+                </label>
+
+                <label className="block">
+                  <span className="mb-2 block text-sm font-semibold text-[#063D2E]">
+                    Property
+                  </span>
+
+                  <input
+                    type="text"
+                    value={property.title}
+                    readOnly
+                    className={`${inputCls} bg-[#F4F0E5]`}
+                  />
+                </label>
+              </div>
+
+              <label className="mt-5 block">
+                <span className="mb-2 block text-sm font-semibold text-[#063D2E]">
+                  Your Requirement
+                </span>
+
+                <textarea
+                  value={form.requirement}
+                  onChange={set("requirement")}
+                  rows={4}
+                  placeholder="Tell us about your requirement, preferred budget, or anything you'd like to know..."
+                  required
+                  className={`${inputCls} resize-none`}
+                />
+              </label>
+
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <button
+                  type="submit"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A24A] px-8 py-3.5 text-sm font-bold text-[#063D2E] transition hover:-translate-y-0.5 hover:bg-[#A8823D]"
+                >
+                  Send Enquiry
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </button>
+
+                {property.contact?.[0] && (
+                  <a
+                    href={`tel:${property.contact[0].replace(/\D/g, "")}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-[#063D2E] px-8 py-3.5 text-sm font-bold text-[#063D2E] transition hover:bg-[#063D2E] hover:text-white"
+                  >
+                    <Phone className="h-4 w-4" />
+                    Call Now
+                  </a>
+                )}
+              </div>
+            </form>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}

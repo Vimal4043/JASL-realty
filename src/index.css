@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #faf8f1;
+  --color-cream-dark: #f4f0e5;
+  --color-forest: #063d2e;
+  --color-pine: #032f25;
+  --color-gold: #c9a24a;
+  --color-gold-light: #e3c875;
+  --color-gold-dark: #a8823d;
+  --color-ink: #17352d;
+  --color-sage: #66756f;
+}
+
+:root {
+  --cream: #faf8f1;
+  --cream-dark: #f4f0e5;
+  --forest-green: #063d2e;
+  --dark-green: #032f25;
+  --gold: #c9a24a;
+  --gold-light: #e3c875;
+  --text-dark: #17352d;
+  --text-muted: #66756f;
+  --white: #ffffff;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  background-color: #FAF8F1;
+  color: #17352D;
+}
+
+/* =========================================================
+   GLOBAL TYPOGRAPHY
+   Change these values here to control the entire website.
+========================================================= */
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Manrope", sans-serif;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  font-size: clamp(1.125rem, 2.5vw, 3rem);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+h3 {
+  font-size: clamp(0.9rem, 2vw, 2rem);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+h4 {
+  font-size: clamp(0.75rem, 1.8vw, 1.25rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1.125rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+p {
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+/* =========================================================
+   BRAND FONT
+========================================================= */
+
+.font-heading {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+}
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background: #063D2E;
+  color: #E3C875;
+}
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F0E5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #063D2E;
+  border-radius: 999px;
+}
+
+/* Premium gold hairline + emerald glow helpers */
+.gold-hairline {
+  background: linear-gradient(90deg, transparent, #C9A24A, transparent);
+}
+
+.card-premium {
+  box-shadow: 0 2px 10px rgba(6, 61, 46, 0.08), 0 14px 34px rgba(6, 61, 46, 0.08);
+}
+
+/* =========================================================
+   FLOATING ANIMATION
+========================================================= */
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+/* =========================================================
+   GRAIN TEXTURE
+========================================================= */
+
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
