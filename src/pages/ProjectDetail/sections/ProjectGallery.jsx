@@ -54,7 +54,7 @@ export default function ProjectGallery({ project }) {
   return (
     <section
       data-testid="project-gallery"
-      className="bg-white mt-15 px-5 py-6 md:px-10 md:py-10"
+      className="bg-white px-5 py-6 md:px-10 md:py-10"
     >
       <div className="mx-auto max-w-6xl">
         {/* Main Gallery */}
