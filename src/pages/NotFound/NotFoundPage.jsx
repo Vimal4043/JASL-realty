@@ -24,7 +24,7 @@ export default function NotFoundPage() {
 
         <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-[#66756F] sm:text-lg">
           The page you're looking for doesn't exist or may have been moved.
-          Let's get you back to our properties.
+          Let's get you back to our projects.
         </p>
 
         <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -37,10 +37,10 @@ export default function NotFoundPage() {
           </Link>
 
           {/* <Link
-            to="/properties"
+            to="/projects"
             className="group flex items-center justify-center gap-2 rounded-full border border-[#063D2E]/20 px-7 py-3.5 font-semibold text-[#063D2E] transition-colors duration-300 hover:border-[#C9A24A] hover:bg-[#C9A24A] hover:text-white"
           >
-            View Properties
+            View Projects
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link> */}
         </div>

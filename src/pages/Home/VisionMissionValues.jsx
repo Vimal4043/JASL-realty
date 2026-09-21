@@ -5,7 +5,7 @@ const items = [
   {
     icon: Eye,
     title: "Vision",
-    text: "JASL Realty helps homebuyers find suitable residential properties in Panvel and New Panvel with clear, practical guidance.",
+    text: "JASL Realty helps homebuyers find suitable residential projects in Panvel and New Panvel with clear, practical guidance.",
   },
   {
     icon: Target,
@@ -40,13 +40,13 @@ export default function VisionMissionValues() {
     <section
       id="vision-mission-values"
       data-testid="vision-mission-values-section"
-      className="bg-[#FAF8F1] py-8 md:py-12"
+      className="bg-cream py-8 md:py-12"
     >
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         
         {/* Heading */}
         {/* <div className="mb-10 max-w-3xl md:mb-14">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#C9A24A]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">
             What drives us
           </p>
 
@@ -82,17 +82,17 @@ export default function VisionMissionValues() {
                 viewport={{ once: true, amount: 0.2 }}
                 className={`relative flex min-h-75 flex-col items-center overflow-hidden px-7 py-10 text-center transition-all duration-500 sm:px-10 sm:py-12 ${
                   isMiddle
-                    ? "bg-gradient-to-b from-[#063D2E] to-[#032F25] text-[#FAF8F1]"
-                    : "bg-[#032F25] text-[#FAF8F1]"
+                    ? "bg-linear-to-b from-[#063D2E] to-pine text-cream"
+                    : "bg-pine text-cream"
                 }`}
               >
-                <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#C9A24A]/70 to-transparent" />
+                <div className="absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-gold/70 to-transparent" />
                 {/* Icon */}
                 <div
                   className={`flex h-20 w-20 items-center justify-center rounded-full border-2 ${
                     isMiddle
-                      ? "border-[#C9A24A] bg-gradient-to-b from-[#C9A24A] to-[#E3C875] text-[#032F25]"
-                      : "border-[#C9A24A]/60 bg-white/10 text-[#E3C875]"
+                      ? "border-gold bg-linear-to-b from-gold to-[#E3C875] text-pine"
+                      : "border-gold/60 bg-white/10 text-gold-light"
                   }`}
                 >
                   <Icon

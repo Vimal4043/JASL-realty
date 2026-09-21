@@ -7,7 +7,7 @@ export default function AboutPage() {
       <main className="pt-[76px] md:pt-[112px]">
         <AboutIntroduction />
         {/* <AboutStory /> */}
-        {/* <AboutProperties /> */}
+        {/* <AboutProjects /> */}
         {/* <AboutValues /> */}
         <AboutCTA />
       </main>

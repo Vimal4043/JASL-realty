@@ -1,5 +1,5 @@
 import { Mail, MapPin, Phone, Monitor } from "lucide-react";
-import { BRAND } from "../../data/properties.js";
+import { BRAND } from "../../data/projects.js";
 
 const contactItems = [
   {

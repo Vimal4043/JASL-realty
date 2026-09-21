@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 
 import HomePage from "./pages/Home/HomePage.jsx";
-import PropertiesPage from "./pages/Properties/PropertiesPage.jsx";
-import PropertyDetailPage from "./pages/PropertyDetail/PropertyDetailPage.jsx";
+import ProjectsPage from "./pages/Projects/ProjectsPage.jsx";
+import ProjectDetailPage from "./pages/ProjectDetail/ProjectDetailPage.jsx";
 import AboutPage from "./pages/About/AboutPage.jsx";
 import FAQsPage from "./pages/FAQs/FAQsPage.jsx";
 import ContactPage from "./pages/Contact/ContactPage.jsx";
@@ -23,8 +23,8 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/properties" element={<PropertiesPage />} />
-            <Route path="/properties/:id" element={<PropertyDetailPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/:id" element={<ProjectDetailPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/faqs" element={<FAQsPage />} />
             <Route path="/contact" element={<ContactPage />} />

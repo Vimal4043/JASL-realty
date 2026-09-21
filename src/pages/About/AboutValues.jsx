@@ -6,7 +6,7 @@ const VALUES = [
   {
     icon: ShieldCheck,
     title: "Transparency",
-    body: "We believe homebuyers should have clear information about the property, pricing, location and project details before making a decision.",
+    body: "We believe homebuyers should have clear information about pricing, location and project details before making a decision.",
   },
   {
     icon: HeartHandshake,
@@ -16,7 +16,7 @@ const VALUES = [
   {
     icon: Compass,
     title: "Right Direction",
-    body: "Our goal is not simply to show you properties, but to help you make a confident and informed choice for your future home.",
+    body: "Our goal is not simply to show you projects, but to help you make a confident and informed choice for your future home.",
   },
 ];
 
@@ -24,7 +24,7 @@ export default function AboutValues() {
   return (
     <section
       data-testid="about-values"
-      className="scroll-mt-24 bg-[#063D2E] px-5 py-10 text-white md:px-10 md:py-16"
+      className="scroll-mt-24 bg-forest px-5 py-10 text-white md:px-10 md:py-16"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal>
@@ -58,7 +58,7 @@ export default function AboutValues() {
                 className="rounded-2xl border border-white/10 bg-white/5 p-7"
               >
                 <div className="flex items-center gap-5">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#C9A24A] text-[#063D2E]">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold text-forest">
                     <Icon className="h-5 w-5" />
                   </span>
 

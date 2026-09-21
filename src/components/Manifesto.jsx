@@ -1,11 +1,11 @@
 import { Reveal, Overline } from './Reveal.jsx'
-import { BRAND } from '../data/properties.js'
+import { BRAND } from '../data/projects.js'
 
 const CHAPTERS = [
   {
     n: '01',
     title: 'A smaller portfolio',
-    body: 'We represent a strictly limited number of properties at any one time, so every home gets the attention it deserves.',
+    body: 'We represent a strictly limited number of projects at any one time, so every home gets the attention it deserves.',
   },
   {
     n: '02',

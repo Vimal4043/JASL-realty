@@ -8,9 +8,9 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-export default function PropertyGallery({ property }) {
-  const images = property.images || [];
-  const videos = property.videos || [];
+export default function ProjectGallery({ project }) {
+  const images = project.images || [];
+  const videos = project.videos || [];
 
   const media = [
     ...images.map((src) => ({
@@ -39,7 +39,7 @@ export default function PropertyGallery({ property }) {
   if (media.length === 0) {
     return (
       <section
-        data-testid="property-gallery"
+        data-testid="project-gallery"
         className="bg-white px-5 py-8 md:px-10 md:py-12"
       >
         <div className="mx-auto max-w-6xl">
@@ -53,7 +53,7 @@ export default function PropertyGallery({ property }) {
 
   return (
     <section
-      data-testid="property-gallery"
+      data-testid="project-gallery"
       className="bg-white mt-15 px-5 py-6 md:px-10 md:py-10"
     >
       <div className="mx-auto max-w-6xl">
@@ -71,7 +71,7 @@ export default function PropertyGallery({ property }) {
             ) : (
               <img
                 src={activeMedia.src}
-                alt={`${property.title} - Image ${active + 1}`}
+                alt={`${project.title} - Image ${active + 1}`}
                 className="max-h-[75vh] w-full cursor-zoom-in object-contain"
                 onClick={() => setLightbox(true)}
               />
@@ -109,9 +109,9 @@ export default function PropertyGallery({ property }) {
           )}
 
           {/* Ready to move badge */}
-          {property.availabilityNote && (
+          {project.availabilityNote && (
             <div className="absolute left-4 top-4 rounded-full bg-[#C9A24A] px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#063D2E]">
-              {property.availabilityNote}
+              {project.availabilityNote}
             </div>
           )}
         </div>
@@ -154,7 +154,7 @@ export default function PropertyGallery({ property }) {
                 ) : (
                   <img
                     src={item.src}
-                    alt={`${property.title} thumbnail ${i + 1}`}
+                    alt={`${project.title} thumbnail ${i + 1}`}
                     className="aspect-square w-full object-cover"
                     loading="lazy"
                   />
@@ -185,7 +185,7 @@ export default function PropertyGallery({ property }) {
 
               <img
                 src={activeMedia.src}
-                alt={`${property.title} - Image ${active + 1}`}
+                alt={`${project.title} - Image ${active + 1}`}
                 className="max-h-[90vh] max-w-[92vw] rounded-xl object-contain"
                 onClick={(e) => e.stopPropagation()}
               />

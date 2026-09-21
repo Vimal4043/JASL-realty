@@ -71,7 +71,7 @@ export default function AboutHero() {
             className="mx-auto mt-6 max-w-2xl text-base leading-7 text-white/90 md:text-lg"
           >
             We help homebuyers discover thoughtfully selected residential
-            properties in Panvel and New Panvel, with clear guidance from
+            projects in Panvel and New Panvel, with clear guidance from
             enquiry to possession.
           </motion.p>
         </motion.div>

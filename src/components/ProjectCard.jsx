@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function PropertyCard({ property, index = 0 }) {
-  const image = (property.images && property.images[0]) || "";
+export default function ProjectCard({ project, index = 0 }) {
+  const image = (project.images && project.images[0]) || "";
 
   return (
     <motion.div
@@ -17,15 +17,15 @@ export default function PropertyCard({ property, index = 0 }) {
       }}
     >
       <Link
-        to={`/properties/${property.id}`}
-        data-testid={`property-${property.id}`}
+        to={`/projects/${project.id}`}
+        data-testid={`project-${project.id}`}
         className="group block overflow-hidden rounded-2xl border border-[#E7DFC8] bg-white transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(6,61,46,0.12)]"
       >
         {/* Image */}
         <div className="relative aspect-4/3 overflow-hidden">
           <img
             src={image}
-            alt={`${property.title}, ${property.location}`}
+            alt={`${project.title}, ${project.location}`}
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
@@ -36,20 +36,20 @@ export default function PropertyCard({ property, index = 0 }) {
         {/* Content */}
         <div className="p-6">
           <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#66756F]">
-            {property.location}
+            {project.location}
           </p>
 
           <h3 className="mt-2 font-heading text-xl font-bold text-[#063D2E]">
-            {property.title}
+            {project.title}
           </h3>
 
           <p className="mt-3 font-heading text-xl font-extrabold tracking-tight text-[#032F25]">
-            {property.area}
+            {project.area}
           </p>
 
-          {property.highlights?.length > 0 && (
+          {project.highlights?.length > 0 && (
             <div className="mt-4 flex flex-wrap gap-2">
-              {property.highlights.slice(0, 3).map((highlight) => (
+              {project.highlights.slice(0, 3).map((highlight) => (
                 <span
                   key={highlight}
                   className="rounded-full border border-[#E7DFC8] px-3 py-1 text-xs font-semibold text-[#063D2E]"
@@ -67,12 +67,12 @@ export default function PropertyCard({ property, index = 0 }) {
               </p>
 
               <p className="mt-1 font-heading text-lg font-bold text-[#063D2E]">
-                {property.price || "Price on request"}
+                {project.price || "Price on request"}
               </p>
             </div>
 
             <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#032F25] transition-colors duration-300 group-hover:text-[#C9A24A]">
-              View Property
+              View Project
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
           </div>

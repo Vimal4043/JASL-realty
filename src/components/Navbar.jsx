@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Mail, Menu, Phone, X } from "lucide-react";
-import { BRAND } from "../data/properties.js";
+import { BRAND } from "../data/projects.js";
 import logo from "../assets/jasl-realty-logowithname.png";
 
 const LINKS = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Properties", to: "/properties" },
+  { label: "Projects", to: "/projects" },
   { label: "FAQs", to: "/faqs" },
   { label: "Contact", to: "/contact" },
 ];

@@ -1,5 +1,5 @@
 import { Search, X } from "lucide-react";
-import { PROPERTY_TYPES, BUDGETS, LOCATIONS } from "../../data/properties.js";
+import { PROJECT_TYPES, BUDGETS, LOCATIONS } from "../../data/projects.js";
 
 const inputCls =
   "w-full rounded-xl border border-[#E7DFC8] bg-[#F4F0E5] px-4 py-3 text-sm text-[#17352D] outline-none transition-colors duration-300 focus:border-[#032F25] focus:ring-2 focus:ring-[#032F25]/20";
@@ -11,7 +11,7 @@ const DEFAULT_FILTERS = {
   query: "",
 };
 
-export default function PropertiesFilters({ filters, onChange }) {
+export default function ProjectsFilters({ filters, onChange }) {
   const set = (key) => (event) => {
     onChange({
       ...filters,
@@ -25,7 +25,7 @@ export default function PropertiesFilters({ filters, onChange }) {
 
   return (
     <section
-      data-testid="properties-filters"
+      data-testid="projects-filters"
       className="scroll-mt-12 bg-[#F4F0E5] px-5 py-8 md:px-10 md:py-12"
     >
       <div className="mx-auto max-w-6xl">
@@ -36,7 +36,7 @@ export default function PropertiesFilters({ filters, onChange }) {
             </p>
 
             <h2 className="mt-2 font-heading text-2xl font-bold text-[#063D2E]">
-              Search residential properties
+              Search residential projects
             </h2>
           </div> */}
 
@@ -59,7 +59,7 @@ export default function PropertiesFilters({ filters, onChange }) {
               >
                 <option value="all">All home types</option>
 
-                {PROPERTY_TYPES.map((type) => (
+                {PROJECT_TYPES.map((type) => (
                   <option key={type} value={type}>
                     {type}
                   </option>

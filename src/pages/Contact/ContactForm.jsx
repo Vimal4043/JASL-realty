@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 import { Reveal } from "../../components/Reveal.jsx";
-import { PROPERTY_TYPES, BRAND } from "../../data/properties.js";
+import { PROJECT_TYPES, BRAND } from "../../data/projects.js";
 import { sendForm } from "../../lib/formsubmit.js";
 
 const inputCls =
@@ -56,7 +56,7 @@ export default function ContactForm() {
     email: "",
     country: "India",
     phone: "",
-    interest: "Buy a Property",
+    interest: "Buy a Home",
     message: "",
   });
 
@@ -74,7 +74,7 @@ export default function ContactForm() {
       email: "",
       country: "India",
       phone: "",
-      interest: "Buy a Property",
+      interest: "Buy a Home",
       message: "",
     });
   };
@@ -325,11 +325,11 @@ export default function ContactForm() {
                   onChange={set("interest")}
                   className={inputCls}
                 >
-                  <option value="Buy a Property">Buy a Property</option>
+                  <option value="Buy a Home">Buy a Home</option>
 
-                  <option value="Rent a Property">Rent a Property</option>
+                  <option value="Rent a Home">Rent a Home</option>
 
-                  {PROPERTY_TYPES.map((type) => (
+                  {PROJECT_TYPES.map((type) => (
                     <option key={type} value={type}>
                       {type}
                     </option>

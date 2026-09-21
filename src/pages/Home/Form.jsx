@@ -45,24 +45,24 @@ export default function Form() {
     <section
       id="inquiry"
       data-testid="inquiry-section"
-      className="scroll-mt-12 bg-[#FFF] py-12 md:py-20"
+      className="scroll-mt-12 bg-white py-12 md:py-20"
     >
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* =====================================================
             SECTION INTRO
             ===================================================== */}
         <div className="mb-8 text-center md:mb-10">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#C9A24A]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">
             Get In Touch
           </p>
 
-          <h2 className="mt-3 font-heading text-3xl font-extrabold leading-tight tracking-tight text-[#063D2E] md:text-4xl">
-            Find Your <span className="text-[#C9A24A]">Dream Home</span>
+          <h2 className="mt-3 font-heading text-3xl font-extrabold leading-tight tracking-tight text-forest md:text-4xl">
+            Find Your <span className="text-gold">Dream Home</span>
           </h2>
 
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#063D2E]/60 md:text-base">
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-forest/60 md:text-base">
             Tell us what you're looking for and our team will help you find the
-            right property.
+            right project.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export default function Form() {
                 duration: 0.7,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="relative min-h-[360px] overflow-hidden sm:min-h-[440px] lg:min-h-[650px]"
+              className="relative min-h-90 overflow-hidden sm:min-h-110 lg:min-h-162.5"
             >
               <img
                 src={ENQUIRY_IMAGE}
@@ -91,11 +91,11 @@ export default function Form() {
               />
 
               {/* Theme overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#063D2E]/90 via-[#063D2E]/25 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-forest/90 via-forest/25 to-transparent" />
 
               {/* Left image content */}
               <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9 md:p-10">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#C9A24A]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">
                   JASL REALTY
                 </p>
 
@@ -103,7 +103,7 @@ export default function Form() {
                   Let's find a place you'll love to call home.
                 </h3>
 
-                <div className="mt-4 h-0.5 w-16 bg-[#C9A24A]" />
+                <div className="mt-4 h-0.5 w-16 bg-gold" />
 
                 <p className="mt-5 max-w-md text-sm leading-6 text-white/75">
                   Share your requirements with us and our team will help you
@@ -126,14 +126,14 @@ export default function Form() {
               className="bg-white p-6 sm:p-8 md:p-10 lg:p-12"
             >
               {submitted ? (
-                <div className="flex min-h-[520px] flex-col items-center justify-center text-center">
-                  <CheckCircle2 className="h-14 w-14 text-[#C9A24A]" />
+                <div className="flex min-h-130 flex-col items-center justify-center text-center">
+                  <CheckCircle2 className="h-14 w-14 text-gold" />
 
-                  <h3 className="mt-6 font-heading text-2xl font-extrabold text-[#063D2E] md:text-3xl">
+                  <h3 className="mt-6 font-heading text-2xl font-extrabold text-forest md:text-3xl">
                     Thank you for your enquiry.
                   </h3>
 
-                  <p className="mt-3 max-w-md text-sm leading-relaxed text-[#063D2E]/60 md:text-base">
+                  <p className="mt-3 max-w-md text-sm leading-relaxed text-forest/60 md:text-base">
                     We've received your details and will get back to you shortly
                     to help you find the right home.
                   </p>
@@ -141,7 +141,7 @@ export default function Form() {
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="mt-7 rounded-full bg-[#C9A24A] px-6 py-3 text-sm font-semibold text-[#063D2E] transition-colors duration-300 hover:bg-[#A8823D]"
+                    className="mt-7 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-forest transition-colors duration-300 hover:bg-gold-dark"
                   >
                     Send another enquiry
                   </button>
@@ -150,15 +150,15 @@ export default function Form() {
                 <>
                   {/* Form heading */}
                   <div className="mb-7">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#C9A24A]">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">
                       Quick Enquiry
                     </p>
 
-                    <h3 className="mt-2 font-heading text-3xl font-extrabold tracking-tight text-[#063D2E] md:text-4xl">
+                    <h3 className="mt-2 font-heading text-3xl font-extrabold tracking-tight text-forest md:text-4xl">
                       Tell us what you need.
                     </h3>
 
-                    <div className="mt-3 h-0.5 w-16 bg-[#C9A24A]" />
+                    <div className="mt-3 h-0.5 w-16 bg-gold" />
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
@@ -166,7 +166,7 @@ export default function Form() {
                     <input
                       type="hidden"
                       name="_subject"
-                      value="New Residential Property Enquiry"
+                      value="New Residential Project Enquiry"
                     />
 
                     <input type="hidden" name="_captcha" value="false" />
@@ -184,7 +184,7 @@ export default function Form() {
                         required
                         placeholder="Your Name"
                         aria-label="Name"
-                        className="w-full rounded-none border border-[#063D2E]/15 bg-white px-4 py-3.5 text-sm text-[#063D2E] outline-none transition-all placeholder:text-[#063D2E]/40 focus:border-[#C9A24A] focus:ring-2 focus:ring-[#C9A24A]/10"
+                        className="w-full rounded-none border border-forest/15 bg-white px-4 py-3.5 text-sm text-forest outline-none transition-all placeholder:text-forest/40 focus:border-gold focus:ring-2 focus:ring-gold/10"
                       />
 
                       <input
@@ -194,7 +194,7 @@ export default function Form() {
                         required
                         placeholder="Email"
                         aria-label="Email"
-                        className="w-full rounded-none border border-[#063D2E]/15 bg-white px-4 py-3.5 text-sm text-[#063D2E] outline-none transition-all placeholder:text-[#063D2E]/40 focus:border-[#C9A24A] focus:ring-2 focus:ring-[#C9A24A]/10"
+                        className="w-full rounded-none border border-forest/15 bg-white px-4 py-3.5 text-sm text-forest outline-none transition-all placeholder:text-forest/40 focus:border-gold focus:ring-2 focus:ring-gold/10"
                       />
                     </div>
 
@@ -209,7 +209,7 @@ export default function Form() {
                         required
                         placeholder="Mobile Number"
                         aria-label="Phone"
-                        className="w-full rounded-none border border-[#063D2E]/15 bg-white px-4 py-3.5 text-sm text-[#063D2E] outline-none transition-all placeholder:text-[#063D2E]/40 focus:border-[#C9A24A] focus:ring-2 focus:ring-[#C9A24A]/10"
+                        className="w-full rounded-none border border-forest/15 bg-white px-4 py-3.5 text-sm text-forest outline-none transition-all placeholder:text-forest/40 focus:border-gold focus:ring-2 focus:ring-gold/10"
                       />
 
                       <select
@@ -217,8 +217,8 @@ export default function Form() {
                         name="requirement"
                         required
                         defaultValue=""
-                        aria-label="Property type"
-                        className="w-full appearance-none rounded-none border border-[#063D2E]/15 bg-white px-4 py-3.5 text-sm text-[#063D2E]/60 outline-none transition-all focus:border-[#C9A24A] focus:ring-2 focus:ring-[#C9A24A]/10"
+                        aria-label="Project type"
+                        className="w-full appearance-none rounded-none border border-forest/15 bg-white px-4 py-3.5 text-sm text-forest/60 outline-none transition-all focus:border-gold focus:ring-2 focus:ring-gold/10"
                       >
                         <option value="" disabled>
                           Select Home Type
@@ -241,7 +241,7 @@ export default function Form() {
                         required
                         defaultValue=""
                         aria-label="Preferred location"
-                        className="w-full appearance-none rounded-none border border-[#063D2E]/15 bg-white px-4 py-3.5 text-sm text-[#063D2E]/60 outline-none transition-all focus:border-[#C9A24A] focus:ring-2 focus:ring-[#C9A24A]/10"
+                        className="w-full appearance-none rounded-none border border-forest/15 bg-white px-4 py-3.5 text-sm text-forest/60 outline-none transition-all focus:border-gold focus:ring-2 focus:ring-gold/10"
                       >
                         <option value="" disabled>
                           Preferred Location
@@ -268,7 +268,7 @@ export default function Form() {
                         required
                         defaultValue=""
                         aria-label="Budget"
-                        className="w-full appearance-none rounded-none border border-[#063D2E]/15 bg-white px-4 py-3.5 text-sm text-[#063D2E]/60 outline-none transition-all focus:border-[#C9A24A] focus:ring-2 focus:ring-[#C9A24A]/10"
+                        className="w-full appearance-none rounded-none border border-forest/15 bg-white px-4 py-3.5 text-sm text-forest/60 outline-none transition-all focus:border-gold focus:ring-2 focus:ring-gold/10"
                       >
                         <option value="" disabled>
                           Select Budget
@@ -295,7 +295,7 @@ export default function Form() {
                       required
                       defaultValue=""
                       aria-label="Country"
-                      className="w-full appearance-none rounded-none border border-[#063D2E]/15 bg-white px-4 py-3.5 text-sm text-[#063D2E]/60 outline-none transition-all focus:border-[#C9A24A] focus:ring-2 focus:ring-[#C9A24A]/10"
+                      className="w-full appearance-none rounded-none border border-forest/15 bg-white px-4 py-3.5 text-sm text-forest/60 outline-none transition-all focus:border-gold focus:ring-2 focus:ring-gold/10"
                     >
                       <option value="" disabled>
                         Select Country
@@ -323,7 +323,7 @@ export default function Form() {
                       rows="4"
                       placeholder="Tell us about your requirements"
                       aria-label="Additional details"
-                      className="w-full resize-none rounded-none border border-[#063D2E]/15 bg-white px-4 py-3.5 text-sm text-[#063D2E] outline-none transition-all placeholder:text-[#063D2E]/40 focus:border-[#C9A24A] focus:ring-2 focus:ring-[#C9A24A]/10"
+                      className="w-full resize-none rounded-none border border-forest/15 bg-white px-4 py-3.5 text-sm text-forest outline-none transition-all placeholder:text-forest/40 focus:border-gold focus:ring-2 focus:ring-gold/10"
                     />
 
                     {/* =========================================
@@ -333,7 +333,7 @@ export default function Form() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A24A] px-8 py-3.5 text-sm font-semibold text-[#063D2E] transition-all duration-300 hover:bg-[#A8823D] disabled:cursor-not-allowed disabled:opacity-60"
+                        className="group inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-forest transition-all duration-300 hover:bg-gold-dark disabled:cursor-not-allowed disabled:opacity-60"
                       >
                         <span>{loading ? "Sending..." : "Send Enquiry"}</span>
 

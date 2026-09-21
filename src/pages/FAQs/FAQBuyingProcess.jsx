@@ -8,15 +8,15 @@ const QUESTIONS = [
   },
   {
     q: "What should I do before booking a home?",
-    a: "We recommend visiting the property, reviewing the available configuration and pricing, checking the relevant project approvals and understanding the complete payment and documentation requirements before booking.",
+    a: "We recommend visiting the project, reviewing the available configuration and pricing, checking the relevant project approvals and understanding the complete payment and documentation requirements before booking.",
   },
   {
-    q: "Can I get more details about a particular property?",
-    a: "Yes. Each property page provides available specifications, pricing, amenities, connectivity and other project information. You can also contact us for additional details.",
+    q: "Can I get more details about a particular project?",
+    a: "Yes. Each project page provides available specifications, pricing, amenities, connectivity and other project information. You can also contact us for additional details.",
   },
   {
     q: "How can I book a site visit?",
-    a: "You can submit an enquiry through the property page or contact us directly using the phone numbers provided on the website.",
+    a: "You can submit an enquiry through the project page or contact us directly using the phone numbers provided on the website.",
   },
 ];
 

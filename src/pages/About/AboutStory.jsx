@@ -4,7 +4,7 @@ const STORY = [
   {
     n: "01",
     title: "Understanding Your Needs",
-    body: "Every homebuyer has different priorities. We take the time to understand your preferred location, home configuration, budget and requirements before helping you explore suitable properties.",
+    body: "Every homebuyer has different priorities. We take the time to understand your preferred location, home configuration, budget and requirements before helping you explore suitable projects.",
   },
   {
     n: "02",
@@ -22,13 +22,13 @@ export default function AboutStory() {
   return (
     <section
       data-testid="about-story"
-      className="scroll-mt-12 bg-[#F4F0E5] px-5 py-8 md:px-10 md:py-12"
+      className="scroll-mt-12 bg-cream-dark px-5 py-8 md:px-10 md:py-12"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <Overline>Our Approach</Overline>
 
-          <h2 className="mt-5 max-w-4xl font-heading text-3xl font-extrabold leading-tight tracking-tight text-[#063D2E] md:text-5xl">
+          <h2 className="mt-5 max-w-4xl font-heading text-3xl font-extrabold leading-tight tracking-tight text-forest md:text-5xl">
             Making the search for your next home simpler.
           </h2>
         </Reveal>
@@ -37,16 +37,16 @@ export default function AboutStory() {
           {STORY.map((item, index) => (
             <Reveal key={item.n} delay={index * 0.05}>
               <div className="flex gap-6 border-t border-[#E7DFC8] py-8 first:border-t-0 md:gap-10 md:py-10">
-                <span className="shrink-0 font-heading text-sm font-extrabold text-[#C9A24A]">
+                <span className="shrink-0 font-heading text-sm font-extrabold text-gold">
                   {item.n}
                 </span>
 
                 <div>
-                  <h3 className="font-heading text-2xl font-bold text-[#063D2E] md:text-3xl">
+                  <h3 className="font-heading text-2xl font-bold text-forest md:text-3xl">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 max-w-4xl text-[15px] leading-7 text-[#66756F] md:text-base">
+                  <p className="mt-3 max-w-4xl text-[15px] leading-7 text-sage md:text-base">
                     {item.body}
                   </p>
                 </div>

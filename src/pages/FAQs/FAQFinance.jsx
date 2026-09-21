@@ -4,7 +4,7 @@ import FAQAccordion from "../../components/FAQAccordion.jsx";
 const QUESTIONS = [
   {
     q: "Are home loans available?",
-    a: "Home loan availability depends on the project, buyer eligibility and lending institution. Our team can help you understand the available options for the property you are interested in.",
+    a: "Home loan availability depends on the project, buyer eligibility and lending institution. Our team can help you understand the available options for the project you are interested in.",
   },
   {
     q: "Are loans available from nationalized banks?",
@@ -16,7 +16,7 @@ const QUESTIONS = [
   },
   {
     q: "Can you help me understand the financing process?",
-    a: "Yes. Contact our team after selecting a property and we can guide you on the available financing and documentation requirements.",
+    a: "Yes. Contact our team after selecting a project and we can guide you on the available financing and documentation requirements.",
   },
 ];
 

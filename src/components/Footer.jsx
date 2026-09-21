@@ -1,12 +1,12 @@
 import { ArrowUpRight, Mail, MapPin, Phone, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
-import { BRAND } from "../data/properties.js";
+import { BRAND } from "../data/projects.js";
 import logo from "../assets/jasl-realty-logowithname.png";
 
 const NAV = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Properties", to: "/properties" },
+  { label: "Projects", to: "/projects" },
   { label: "FAQs", to: "/faqs" },
   { label: "Contact", to: "/contact" },
 ];
@@ -39,17 +39,17 @@ function LinkedinIcon({ className }) {
   );
 }
 
-const SOCIALS = [
-  { label: "Facebook", href: "https://www.facebook.com/", Icon: FacebookIcon },
-  { label: "Instagram", href: "https://www.instagram.com/", Icon: InstagramIcon },
-  { label: "LinkedIn", href: "https://www.linkedin.com/", Icon: LinkedinIcon },
-];
+// const SOCIALS = [
+//   { label: "Facebook", href: "https://www.facebook.com/", Icon: FacebookIcon },
+//   { label: "Instagram", href: "https://www.instagram.com/", Icon: InstagramIcon },
+//   { label: "LinkedIn", href: "https://www.linkedin.com/", Icon: LinkedinIcon },
+// ];
 
 export default function Footer() {
   return (
     <footer
       data-testid="footer"
-      className="border-t border-[#C9A24A]/30 bg-[#FAF8F1] pb-4 pt-10 text-[#17352D] md:pt-14"
+      className="border-t border-gold/30 bg-cream pb-4 pt-10 text-ink md:pt-14"
     >
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr] md:gap-12">
@@ -63,13 +63,13 @@ export default function Footer() {
               />
             </Link>
 
-            <p className="mt-3 max-w-sm text-sm leading-relaxed text-[#66756F]">
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-sage">
               {BRAND.name} helps families find the perfect home — residential
               projects with verified approvals and honest guidance at every
               step, from first visit to key handover.
             </p>
 
-            <div className="mt-6 flex items-center gap-3">
+            {/* <div className="mt-6 flex items-center gap-3">
               {SOCIALS.map(({ label, href, Icon }) => (
                 <a
                   key={label}
@@ -82,26 +82,26 @@ export default function Footer() {
                   <Icon className="h-4 w-4" />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Navigation */}
           <div>
-            <h4 className="font-heading text-sm font-semibold uppercase tracking-[0.28em] text-[#C9A24A]">
+            <h4 className="font-heading text-sm font-semibold uppercase tracking-[0.28em] gold">
               Navigate
             </h4>
-            <div className="mt-3 h-px w-12 bg-[#C9A24A]/60" />
+            <div className="mt-3 h-px w-12 bg-gold/60" />
 
             <ul className="mt-5 space-y-3">
               {NAV.map((n) => (
                 <li key={n.label}>
                   <Link
                     to={n.to}
-                    className="group inline-flex items-center gap-1.5 text-sm text-[#17352D] transition-colors duration-300 hover:text-[#C9A24A]"
+                    className="group inline-flex items-center gap-1.5 text-sm text-ink transition-colors duration-300 hover:gold"
                   >
                     {n.label}
 
-                    <ArrowUpRight className="h-3.5 w-3.5 text-[#C9A24A] opacity-0 transition-all duration-300 group-hover:opacity-100" />
+                    <ArrowUpRight className="h-3.5 w-3.5 gold opacity-0 transition-all duration-300 group-hover:opacity-100" />
                   </Link>
                 </li>
               ))}
@@ -110,30 +110,30 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-heading text-sm font-semibold uppercase tracking-[0.28em] text-[#C9A24A]">
+            <h4 className="font-heading text-sm font-semibold uppercase tracking-[0.28em] gold">
               Contact
             </h4>
-            <div className="mt-3 h-px w-12 bg-[#C9A24A]/60" />
+            <div className="mt-3 h-px w-12 bg-gold/60" />
 
-            <ul className="mt-5 space-y-3 text-sm text-[#17352D]">
+            <ul className="mt-5 space-y-3 text-sm text-ink">
               <li className="flex items-start gap-2.5">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#C9A24A]" />
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 gold" />
                 <a
                   href={`mailto:${BRAND.email}`}
-                  className="break-all transition-colors duration-300 hover:text-[#C9A24A]"
+                  className="break-all transition-colors duration-300 hover:gold"
                 >
                   {BRAND.email}
                 </a>
               </li>
 
               <li className="flex items-start gap-2.5">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#C9A24A]" />
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 gold" />
                 <span>
                   {(BRAND.phones || [BRAND.phone]).map((p, i, arr) => (
                     <span key={p}>
                       <a
                         href={`tel:${p.replace(/\s+/g, "")}`}
-                        className="transition-colors duration-300 hover:text-[#C9A24A]"
+                        className="transition-colors duration-300 hover:gold"
                       >
                         {p}
                       </a>
@@ -144,19 +144,19 @@ export default function Footer() {
               </li>
 
               <li className="flex items-start gap-2.5">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#C9A24A]" />
-                <span className="leading-relaxed text-[#66756F]">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 gold" />
+                <span className="leading-relaxed text-sage">
                   {BRAND.address}
                 </span>
               </li>
 
               <li className="flex items-start gap-2.5">
-                <Globe className="mt-0.5 h-4 w-4 shrink-0 text-[#C9A24A]" />
+                <Globe className="mt-0.5 h-4 w-4 shrink-0 gold" />
                 <a
                   href={BRAND.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors duration-300 hover:text-[#C9A24A]"
+                  className="transition-colors duration-300 hover:gold"
                 >
                   {BRAND.websiteDisplay || BRAND.website}
                 </a>
@@ -166,7 +166,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-[#C9A24A]/25 py-6 text-center text-xs text-[#66756F] md:flex-row md:text-left">
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-gold/25 py-6 text-center text-xs text-sage md:flex-row md:text-left">
           <p>
             © {new Date().getFullYear()} {BRAND.name} ({BRAND.legalName}).
             Built to help you find home.

@@ -1,10 +1,10 @@
 import { ArrowUpRight } from 'lucide-react'
 import { Reveal, Overline } from './Reveal.jsx'
-import PropertyCard from './PropertyCard.jsx'
-import { PROPERTIES } from '../data/properties.js'
+import ProjectCard from './ProjectCard.jsx'
+import { PROJECTS } from '../data/projects.js'
 
-export default function FeaturedProperties() {
-  const featured = PROPERTIES.filter((p) => p.featured).slice(0, 3)
+export default function FeaturedProjects() {
+  const featured = PROJECTS.filter((p) => p.featured).slice(0, 3)
 
   return (
     <section
@@ -24,7 +24,7 @@ export default function FeaturedProperties() {
         <Reveal delay={0.1}>
           <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featured.map((p, i) => (
-              <PropertyCard key={p.id} property={p} index={i} />
+              <ProjectCard key={p.id} project={p} index={i} />
             ))}
           </div>
         </Reveal>

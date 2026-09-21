@@ -1,4 +1,4 @@
-import { BRAND } from '../data/properties.js'
+import { BRAND } from '../data/projects.js'
 
 // FormSubmit (https://formsubmit.co) delivers the posted form data to the
 // BRAND inbox (BRAND.email) without requiring a backend server. It's the same

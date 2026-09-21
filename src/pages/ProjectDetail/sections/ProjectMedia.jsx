@@ -1,11 +1,11 @@
 import { Reveal } from '../../../components/Reveal.jsx'
 
-export default function PropertyMedia({ property }) {
-  const videos = property.videos || []
+export default function ProjectMedia({ project }) {
+  const videos = project.videos || []
   if (videos.length === 0) return null
 
   return (
-    <section data-testid="property-media" className="scroll-mt-12 bg-white px-5 py-8 md:px-10 md:py-12">
+    <section data-testid="project-media" className="scroll-mt-12 bg-white px-5 py-8 md:px-10 md:py-12">
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <h2 className="font-heading text-2xl font-extrabold leading-tight tracking-tight text-[#063D2E] md:text-4xl">

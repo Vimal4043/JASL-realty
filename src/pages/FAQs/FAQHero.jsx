@@ -29,7 +29,7 @@ export default function FAQHero() {
   return (
     <section
       data-testid="faq-hero"
-      className="mt-15 relative flex min-h-[55vh] items-center justify-center overflow-hidden md:min-h-[65vh]"
+      className="relative flex min-h-[55vh] items-center justify-center overflow-hidden md:min-h-[65vh]"
     >
       <motion.img
         src={HERO_IMG}

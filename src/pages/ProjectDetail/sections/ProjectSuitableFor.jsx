@@ -1,12 +1,12 @@
 import { Reveal } from "../../../components/Reveal.jsx";
 import { Home, Users } from "lucide-react";
 
-export default function PropertySuitableFor({ property }) {
-  if (!property.suitableFor?.length) return null;
+export default function ProjectSuitableFor({ project }) {
+  if (!project.suitableFor?.length) return null;
 
   return (
     <section
-      data-testid="property-suitable-for"
+      data-testid="project-suitable-for"
       className="scroll-mt-12 bg-white px-5 py-8 md:px-10 md:py-12"
     >
       <div className="mx-auto max-w-6xl">
@@ -21,7 +21,7 @@ export default function PropertySuitableFor({ property }) {
         </Reveal>
 
         <div className="mt-8 flex flex-wrap gap-3">
-          {property.suitableFor.map((item, index) => (
+          {project.suitableFor.map((item, index) => (
             <Reveal key={item} delay={index * 0.03}>
               <div className="inline-flex items-center gap-2 rounded-full border border-[#E7DFC8] bg-[#F4F0E5] px-5 py-3 text-sm font-semibold text-[#063D2E]">
                 {index % 2 === 0 ? (

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { toast } from 'sonner'
 import { Send, Phone, Mail, MapPin } from 'lucide-react'
 import { Reveal, Overline } from './Reveal.jsx'
-import { BRAND } from '../data/properties.js'
+import { BRAND } from '../data/projects.js'
 
 const inputCls =
   'w-full rounded-xl border border-[#E7DFC8] bg-[#F4F0E5] px-4 py-3.5 text-[#17352D] outline-none transition-colors duration-300 placeholder:text-[#66756F] focus:border-[#032F25] focus:ring-2 focus:ring-[#032F25]/20'

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import Property from "./Property.jsx";
-import PropertiesFilters from "./PropertiesFilters.jsx";
-import PropertiesGrid from "./PropertiesGrid.jsx";
-import { PROPERTIES } from "../../data/properties.js";
+import Project from "./Project.jsx";
+import ProjectsFilters from "./ProjectsFilters.jsx";
+import ProjectsGrid from "./ProjectsGrid.jsx";
+import { PROJECTS } from "../../data/projects.js";
 
-export default function PropertiesPage() {
+export default function ProjectsPage() {
   const [searchParams] = useSearchParams();
   const [filters, setFilters] = useState({
     type: searchParams.get("type") || "all",
@@ -14,14 +14,14 @@ export default function PropertiesPage() {
     query: searchParams.get("query") || "",
   });
 
-  const filteredProperties = PROPERTIES.filter((property) => {
+  const filteredProjects = PROJECTS.filter((project) => {
     if (filters.type !== "all") {
-      const propertyType = (property.type || "").toLowerCase();
-      if (!propertyType.includes(filters.type.toLowerCase())) return false;
+      const projectType = (project.type || "").toLowerCase();
+      if (!projectType.includes(filters.type.toLowerCase())) return false;
     }
 
     if (filters.budget !== "all") {
-      const minPrice = Number(property.minPrice || 0);
+      const minPrice = Number(project.minPrice || 0);
       const budgetMatches = {
         "Under ₹30 Lakhs": minPrice < 3000000,
         "₹30 - ₹40 Lakhs": minPrice >= 3000000 && minPrice <= 4000000,
@@ -33,7 +33,7 @@ export default function PropertiesPage() {
     }
 
     if (filters.location !== "all") {
-      const locationText = [property.location, property.city, property.state]
+      const locationText = [project.location, project.city, project.state]
         .filter(Boolean)
         .join(" ")
         .toLowerCase();
@@ -43,16 +43,16 @@ export default function PropertiesPage() {
     if (filters.query.trim()) {
       const query = filters.query.trim().toLowerCase();
       const searchableText = [
-        property.title,
-        property.location,
-        property.city,
-        property.state,
-        property.type,
-        property.area,
-        property.price,
-        property.description,
-        ...(property.highlights || []),
-        ...(property.features || []),
+        project.title,
+        project.location,
+        project.city,
+        project.state,
+        project.type,
+        project.area,
+        project.price,
+        project.description,
+        ...(project.highlights || []),
+        ...(project.features || []),
       ]
         .filter(Boolean)
         .join(" ")
@@ -64,10 +64,10 @@ export default function PropertiesPage() {
   });
 
   return (
-    <main className="pt-10 md:pt-20">
-      <Property />
-      <PropertiesFilters filters={filters} onChange={setFilters} />
-      <PropertiesGrid properties={filteredProperties} />
+    <main className="pt-19 md:pt-28">
+      <Project />
+      <ProjectsFilters filters={filters} onChange={setFilters} />
+      <ProjectsGrid projects={filteredProjects} />
     </main>
   );
 }

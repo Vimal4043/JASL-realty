@@ -1,10 +1,10 @@
 import { Reveal, Overline } from "../../../components/Reveal.jsx";
 import { MapPin, ArrowUpRight, Navigation } from "lucide-react";
 
-export default function PropertyLocation({ property }) {
-  const hasConnectivity = property.connectivity?.length > 0;
+export default function ProjectLocation({ project }) {
+  const hasConnectivity = project.connectivity?.length > 0;
 
-  const locationText = [property.location, property.city, property.state]
+  const locationText = [project.location, project.city, project.state]
     .filter(Boolean)
     .join(", ");
 
@@ -14,7 +14,7 @@ export default function PropertyLocation({ property }) {
 
   return (
     <section
-      data-testid="property-location"
+      data-testid="project-location"
       className="scroll-mt-12 bg-[#F4F0E5] px-5 py-8 md:px-10 md:py-12"
     >
       <div className="mx-auto max-w-6xl">
@@ -23,18 +23,18 @@ export default function PropertyLocation({ property }) {
 
           <h3 className="mt-4 flex items-center gap-2 font-heading text-3xl font-extrabold tracking-tight text-[#063D2E] md:text-4xl">
             <MapPin className="h-7 w-7 shrink-0 text-[#C9A24A]" />
-            {property.location}
+            {project.location}
           </h3>
 
           <p className="mt-3 text-base text-[#66756F] md:text-lg">
-            {property.city}
-            {property.state ? `, ${property.state}` : ""}
+            {project.city}
+            {project.state ? `, ${project.state}` : ""}
           </p>
         </Reveal>
 
         {hasConnectivity && (
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {property.connectivity.map((item, index) => (
+            {project.connectivity.map((item, index) => (
               <Reveal key={item} delay={index * 0.03}>
                 <div className="flex h-full items-start gap-3 rounded-2xl border border-[#E7DFC8] bg-white p-5">
                   <Navigation className="mt-0.5 h-5 w-5 shrink-0 text-[#C9A24A]" />
@@ -57,12 +57,12 @@ export default function PropertyLocation({ property }) {
                 </div>
 
                 <h3 className="mt-5 font-heading text-2xl font-bold text-[#063D2E]">
-                  {property.location}
+                  {project.location}
                 </h3>
 
                 <p className="mt-2 text-sm text-[#66756F]">
-                  {property.city}
-                  {property.state ? `, ${property.state}` : ""}
+                  {project.city}
+                  {project.state ? `, ${project.state}` : ""}
                 </p>
 
                 <a

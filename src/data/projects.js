@@ -1,7 +1,7 @@
-import priyansh1 from "../assets/properties/Priyansh/priyansh-1.jpeg";
-import shreeAstavinayak1 from "../assets/properties/ShreeAstavinayak/shreeAstavinayak1.jpeg";
-import harigram1 from "../assets/properties/Harigram/harigram-1.jpeg";
-import harigram2 from "../assets/properties/Harigram/harigram-2.jpeg";
+import priyansh1 from "../assets/projects/Priyansh/priyansh-1.jpeg";
+import shreeAstavinayak1 from "../assets/projects/ShreeAstavinayak/shreeAstavinayak1.jpeg";
+import harigram1 from "../assets/projects/Harigram/harigram-1.jpeg";
+import harigram2 from "../assets/projects/Harigram/harigram-2.jpeg";
 
 export const BRAND = {
   name: "JASL Realty",
@@ -20,7 +20,7 @@ export const BRAND = {
   address: "PL 5 / 39 / 05, Sector 17, Near CKT School, New Panvel, 410206",
 };
 
-export const PROPERTY_TYPES = ["1 RK", "1 BHK", "2 BHK"];
+export const PROJECT_TYPES = ["1 RK", "1 BHK", "2 BHK"];
 
 export const BUDGETS = [
   "Under ₹30 Lakhs",
@@ -34,7 +34,7 @@ export const LOCATIONS = ["New Panvel", "Panvel", "Usarli", "Devad"];
 
 export const AVAILABILITY = ["For Sale", "For Rent"];
 
-export const PROPERTIES = [
+export const PROJECTS = [
   {
     id: "priyansh-new-panvel",
     title: "Priyansh",

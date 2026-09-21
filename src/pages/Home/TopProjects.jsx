@@ -1,19 +1,19 @@
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Reveal, Overline } from '../../components/Reveal.jsx'
-import { PROPERTIES } from '../../data/properties.js'
+import { PROJECTS } from '../../data/projects.js'
 
-export default function TopProperties() {
-  const spot = PROPERTIES.find((p) => p.featured)
-  const rest = PROPERTIES.filter((p) => p.id !== (spot && spot.id))
+export default function TopProjects() {
+  const spot = PROJECTS.find((p) => p.featured)
+  const rest = PROJECTS.filter((p) => p.id !== (spot && spot.id))
 
   if (spot) {
     const image = (spot.images && spot.images[0]) || ''
     return (
-      <section data-testid="top-properties-section" className="scroll-mt-24 bg-[#F4F0E5] px-5 py-8 md:px-10 md:py-12">
+      <section data-testid="top-projects-section" className="scroll-mt-24 bg-[#F4F0E5] px-5 py-8 md:px-10 md:py-12">
         <div className="mx-auto max-w-350">
           <Reveal>
-            <Overline>Featured Property</Overline>
+            <Overline>Featured Project</Overline>
             <h2 className="mt-6 max-w-full font-heading text-3xl font-extrabold leading-tight tracking-tight text-[#063D2E] md:text-5xl">
               Find a home that fits your lifestyle and budget.
             </h2>
@@ -62,10 +62,10 @@ export default function TopProperties() {
                     {spot.price}
                   </p>
                   <Link
-                    to={`/properties/${spot.id}`}
+                    to={`/projects/${spot.id}`}
                     className="group inline-flex items-center gap-2 rounded-full bg-[#063D2E] px-6 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#C9A24A]"
                   >
-                    View Property
+                    View Project
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 </div>
@@ -77,11 +77,11 @@ export default function TopProperties() {
     )
   }
 
-  // Fallback grid if the spotlight property is not available.
+  // Fallback grid if the spotlight project is not available.
   return (
-    <section data-testid="top-properties-section" className="scroll-mt-24 bg-[#F4F0E5] px-5 py-8 md:px-10 md:py-12">
+    <section data-testid="top-projects-section" className="scroll-mt-24 bg-[#F4F0E5] px-5 py-8 md:px-10 md:py-12">
       <div className="mx-auto max-w-350">
-        <Overline>Featured Properties</Overline>
+        <Overline>Featured Projects</Overline>
         <h2 className="mt-6 max-w-5xl font-heading text-3xl font-extrabold leading-tight tracking-tight text-[#063D2E] md:text-5xl">
           Find your next home
         </h2>
@@ -89,7 +89,7 @@ export default function TopProperties() {
           {rest.map((p) => (
             <Link
               key={p.id}
-              to={`/properties/${p.id}`}
+              to={`/projects/${p.id}`}
               className="group block overflow-hidden rounded-2xl border border-black/[0.07] bg-white"
             >
               <img

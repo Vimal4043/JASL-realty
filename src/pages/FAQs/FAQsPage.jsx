@@ -1,5 +1,5 @@
 import FAQHero from './FAQHero.jsx'
-import FAQPropertyInfo from './FAQPropertyInfo.jsx'
+import FAQProjectInfo from './FAQProjectInfo.jsx'
 import FAQPricing from './FAQPricing.jsx'
 import FAQBuyingProcess from './FAQBuyingProcess.jsx'
 import FAQAmenities from './FAQAmenities.jsx'
@@ -9,9 +9,9 @@ import FAQFinance from './FAQFinance.jsx'
 export default function FAQsPage() {
   return (
     <>
-      <main>
+      <main className="pt-19 md:pt-28">
         <FAQHero />
-        <FAQPropertyInfo />
+        <FAQProjectInfo />
         <FAQPricing />
         <FAQBuyingProcess />
         <FAQAmenities />

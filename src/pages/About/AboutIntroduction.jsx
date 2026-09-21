@@ -1,4 +1,4 @@
-import { BRAND } from "../../data/properties.js";
+import { BRAND } from "../../data/projects.js";
 import { Reveal } from "../../components/Reveal.jsx";
 import hero from "../../assets/hero.jpeg";
 
@@ -58,7 +58,7 @@ export default function AboutIntroduction() {
               {/* Main introduction */}
               <p>
                 {BRAND.name} is focused on helping people find residential
-                properties that match their needs, lifestyle and budget. We
+                projects that match their needs, lifestyle and budget. We
                 bring together selected homes in growing locations such as
                 Panvel and New Panvel.
               </p>
@@ -66,18 +66,18 @@ export default function AboutIntroduction() {
               <p className="mt-5">
                 We understand that buying a home is an important decision.
                 That's why we focus on understanding each customer's
-                requirements and helping them explore suitable properties
+                requirements and helping them explore suitable projects
                 based on their preferences and budget.
               </p>
 
               <p className="mt-5">
-                From understanding your requirement to sharing property
+                From understanding your requirement to sharing project
                 details and arranging a site visit, we aim to keep the
                 home-buying journey simple, clear and comfortable.
               </p>
 
               <p className="mt-5">
-                Our goal is to make the property search process easier by
+                Our goal is to make the project search process easier by
                 providing clear information and practical assistance at every
                 stage. Whether you are looking for a compact home or a
                 comfortable family residence, we help you explore options that
@@ -93,9 +93,9 @@ export default function AboutIntroduction() {
                 ================================================= */}
             <div className="mt-7 text-[15px] leading-7 text-[#333333] md:text-base md:leading-7">
               <p>
-                We bring together properties in locations that offer
+                We bring together projects in locations that offer
                 convenience, connectivity and opportunities for future growth.
-                Our approach is centred around making property information
+                Our approach is centred around making project information
                 easier to understand so that customers can make informed
                 decisions.
               </p>

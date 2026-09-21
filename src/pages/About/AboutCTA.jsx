@@ -1,4 +1,4 @@
-import { BRAND } from "../../data/properties.js";
+import { BRAND } from "../../data/projects.js";
 import { Reveal } from "../../components/Reveal.jsx";
 import { ArrowUpRight, Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -32,10 +32,10 @@ export default function AboutCTA() {
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
-                    to="/properties"
+                    to="/projects"
                     className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A24A] px-7 py-3.5 text-sm font-bold text-[#063D2E] transition hover:-translate-y-0.5 hover:bg-[#A8823D]"
                   >
-                    View Properties
+                    View Projects
                     <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
 
@@ -54,7 +54,7 @@ export default function AboutCTA() {
                 </p>
 
                 <p className="mt-4 text-sm leading-6 text-white/70">
-                  Have questions about a property? Give us a call.
+                  Have questions about a project? Give us a call.
                 </p>
 
                 <div className="mt-6 space-y-3">

@@ -8,7 +8,7 @@ import {
   SelectContent,
   SelectItem,
 } from './ui/select.jsx'
-import { PROPERTY_TYPES, LOCATIONS, AVAILABILITY } from '../data/properties.js'
+import { PROJECT_TYPES, LOCATIONS, AVAILABILITY } from '../data/projects.js'
 
 function Field({ icon, label, labelCls, hero, children }) {
   return (
@@ -39,7 +39,7 @@ export default function SearchBar({ variant = 'hero', initial = {} }) {
     if (location !== 'any') params.set('location', location)
     if (availability !== 'any') params.set('availability', availability)
     const qs = params.toString()
-    navigate(qs ? `/properties?${qs}` : '/properties')
+    navigate(qs ? `/projects?${qs}` : '/projects')
   }
 
   const shell = hero
@@ -72,8 +72,8 @@ export default function SearchBar({ variant = 'hero', initial = {} }) {
       data-testid="search-bar"
       className={`relative z-10 mx-auto mt-12 flex w-full max-w-3xl flex-col gap-0 rounded-[20px] p-2 md:mt-14 md:max-w-4xl md:flex-row md:items-end md:rounded-full md:gap-0 ${shell}`}
     >
-      <Field icon={<Building2 className="h-4 w-4" />} label="Property type" labelCls={label} hero={hero}>
-        {cheapSelect(type, setType, 'Any type', PROPERTY_TYPES, 'search-type')}
+      <Field icon={<Building2 className="h-4 w-4" />} label="Project type" labelCls={label} hero={hero}>
+        {cheapSelect(type, setType, 'Any type', PROJECT_TYPES, 'search-type')}
       </Field>
 
       <div className={`mx-4 hidden h-10 w-px ${divider} md:block`} />
@@ -94,7 +94,7 @@ export default function SearchBar({ variant = 'hero', initial = {} }) {
         className="group flex items-center justify-center gap-2 rounded-xl bg-[#C9A24A] px-8 py-4 text-sm font-semibold text-[#063D2E] transition-colors duration-300 hover:bg-[#A8823D] md:my-1 md:rounded-full"
       >
         <Search className="h-4 w-4" />
-        Search Properties
+        Search Projects
       </button>
     </form>
   )

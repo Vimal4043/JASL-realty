@@ -6,7 +6,7 @@ import { ArrowUpRight, Phone } from "lucide-react";
 const inputCls =
   "w-full rounded-xl border border-[#E7DFC8] bg-white px-4 py-3.5 text-sm text-[#17352D] outline-none transition-colors duration-300 placeholder:text-[#888888] focus:border-[#C9A24A] focus:ring-2 focus:ring-[#C9A24A]/20";
 
-export default function PropertyEnquiry({ property }) {
+export default function ProjectEnquiry({ project }) {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -24,7 +24,7 @@ export default function PropertyEnquiry({ property }) {
     e.preventDefault();
 
     toast.success(
-      `Thank you. Our team will contact you shortly about ${property.title}.`,
+      `Thank you. Our team will contact you shortly about ${project.title}.`,
     );
 
     setForm({
@@ -37,7 +37,7 @@ export default function PropertyEnquiry({ property }) {
 
   return (
     <section
-      data-testid="property-enquiry"
+      data-testid="project-enquiry"
       className="scroll-mt-12 bg-white px-5 py-8 md:px-10 md:py-12"
     >
       <div className="mx-auto max-w-5xl">
@@ -49,7 +49,7 @@ export default function PropertyEnquiry({ property }) {
               </p>
 
               <h3 className="mt-3 font-heading text-3xl font-extrabold md:text-4xl">
-                Enquire About {property.title}
+                Enquire About {project.title}
               </h3>
 
               <p className="mt-3 max-w-2xl text-sm leading-6 text-white/75 md:text-base">
@@ -60,7 +60,7 @@ export default function PropertyEnquiry({ property }) {
 
             <form
               onSubmit={submit}
-              data-testid="property-enquiry-form"
+              data-testid="project-enquiry-form"
               className="p-6 md:p-10"
             >
               <div className="grid gap-5 sm:grid-cols-2">
@@ -111,12 +111,12 @@ export default function PropertyEnquiry({ property }) {
 
                 <label className="block">
                   <span className="mb-2 block text-sm font-semibold text-[#063D2E]">
-                    Property
+                    Project
                   </span>
 
                   <input
                     type="text"
-                    value={property.title}
+                    value={project.title}
                     readOnly
                     className={`${inputCls} bg-[#F4F0E5]`}
                   />
@@ -147,9 +147,9 @@ export default function PropertyEnquiry({ property }) {
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </button>
 
-                {property.contact?.[0] && (
+                {project.contact?.[0] && (
                   <a
-                    href={`tel:${property.contact[0].replace(/\D/g, "")}`}
+                    href={`tel:${project.contact[0].replace(/\D/g, "")}`}
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-[#063D2E] px-8 py-3.5 text-sm font-bold text-[#063D2E] transition hover:bg-[#063D2E] hover:text-white"
                   >
                     <Phone className="h-4 w-4" />

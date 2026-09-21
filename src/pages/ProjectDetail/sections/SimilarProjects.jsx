@@ -1,11 +1,11 @@
 import { Reveal } from "../../../components/Reveal.jsx";
-import PropertyCard from "../../../components/PropertyCard.jsx";
-import { PROPERTIES } from "../../../data/properties.js";
+import ProjectCard from "../../../components/ProjectCard.jsx";
+import { PROJECTS } from "../../../data/projects.js";
 
-export default function SimilarProperties({ currentId }) {
-  const current = PROPERTIES.find((p) => p.id === currentId);
+export default function SimilarProjects({ currentId }) {
+  const current = PROJECTS.find((p) => p.id === currentId);
 
-  const others = PROPERTIES.filter((p) => p.id !== currentId);
+  const others = PROJECTS.filter((p) => p.id !== currentId);
 
   const sameLocation = others.filter((p) => current && p.city === current.city);
 
@@ -28,7 +28,7 @@ export default function SimilarProperties({ currentId }) {
 
   return (
     <section
-      data-testid="similar-properties"
+      data-testid="similar-projects"
       className="scroll-mt-12 bg-[#F4F0E5] px-5 py-8 md:px-10 md:py-12"
     >
       <div className="mx-auto max-w-6xl">
@@ -47,8 +47,8 @@ export default function SimilarProperties({ currentId }) {
         </Reveal>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {similar.map((property, index) => (
-            <PropertyCard key={property.id} property={property} index={index} />
+          {similar.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       </div>

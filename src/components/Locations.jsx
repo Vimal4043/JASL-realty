@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { Reveal, Overline } from './Reveal.jsx'
-import { CITIES } from '../data/properties.js'
+import { CITIES } from '../data/projects.js'
 
 export default function Locations() {
   return (

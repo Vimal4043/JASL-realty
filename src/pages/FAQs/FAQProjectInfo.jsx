@@ -16,14 +16,14 @@ const QUESTIONS = [
   },
   {
     q: "Are the projects approved?",
-    a: "The projects have the approvals mentioned on their respective property pages. Priyansh and Shree Astavinayak are CIDCO NAINA approved, while Harigram is listed as CIDCO / NAINA / RERA approved.",
+    a: "The projects have the approvals mentioned on their respective project pages. Priyansh and Shree Astavinayak are CIDCO NAINA approved, while Harigram is listed as CIDCO / NAINA / RERA approved.",
   },
 ];
 
-export default function FAQPropertyInfo() {
+export default function FAQProjectInfo() {
   return (
     <section
-      data-testid="faq-property-info"
+      data-testid="faq-project-info"
       className="scroll-mt-12 bg-white px-5 py-8 md:px-10 md:py-12"
     >
       <div className="mx-auto max-w-4xl">

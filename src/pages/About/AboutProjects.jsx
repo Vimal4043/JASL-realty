@@ -42,10 +42,10 @@ const FEATURES = [
   },
 ];
 
-export default function AboutProperties() {
+export default function AboutProjects() {
   return (
     <section
-      data-testid="about-properties"
+      data-testid="about-projects"
       className="scroll-mt-12 bg-white px-5 py-8 md:px-10 md:py-12"
     >
       <div className="mx-auto max-w-6xl">
@@ -53,7 +53,7 @@ export default function AboutProperties() {
           <Overline>What We Offer</Overline>
 
           <h2 className="mt-5 max-w-4xl font-heading text-3xl font-extrabold leading-tight tracking-tight text-[#063D2E] md:text-5xl">
-            Residential properties made for everyday living.
+            Residential projects made for everyday living.
           </h2>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-[#66756F] md:text-lg">

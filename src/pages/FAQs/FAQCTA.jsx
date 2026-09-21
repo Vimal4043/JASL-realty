@@ -1,4 +1,4 @@
-import { BRAND } from "../../data/properties.js";
+import { BRAND } from "../../data/projects.js";
 import { Reveal } from "../../components/Reveal.jsx";
 import { Phone, Mail } from "lucide-react";
 
@@ -21,7 +21,7 @@ export default function FAQCTA() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-            Our team can help you with property details, pricing, site visits,
+            Our team can help you with project details, pricing, site visits,
             availability and the buying process.
           </p>
 

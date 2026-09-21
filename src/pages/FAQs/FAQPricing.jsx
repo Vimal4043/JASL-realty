@@ -16,7 +16,7 @@ const QUESTIONS = [
   },
   {
     q: "Can I enquire about a specific budget?",
-    a: "Yes. You can use the budget filter on our Properties page to explore homes according to your preferred price range, or contact our team directly for current availability.",
+    a: "Yes. You can use the budget filter on our Projects page to explore homes according to your preferred price range, or contact our team directly for current availability.",
   },
 ];
 
