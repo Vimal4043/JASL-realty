@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import homeHero1 from "../../assets/homeHero1.png";
 import homeHero2 from "../../assets/homeHero2.png";
@@ -36,6 +36,49 @@ export default function Hero() {
   const [prev, setPrev] = useState(-1);
   const [progress, setProgress] = useState(0);
   const [paused] = useState(false);
+  const indexRef = useRef(0);
+  const transitionRef = useRef(false);
+  const preloadRef = useRef(null);
+  const mountedRef = useRef(true);
+  const cycleStartRef = useRef(0);
+
+  const transitionTo = useCallback((nextIndex) => {
+    if (
+      !mountedRef.current ||
+      transitionRef.current ||
+      nextIndex === indexRef.current
+    ) {
+      return;
+    }
+
+    transitionRef.current = true;
+    const currentIndex = indexRef.current;
+    const nextImage = new Image();
+    preloadRef.current = nextImage;
+
+    nextImage.onload = () => {
+      if (!mountedRef.current || preloadRef.current !== nextImage) return;
+
+      indexRef.current = nextIndex;
+      setPrev(currentIndex);
+      setIndex(nextIndex);
+      setProgress(0);
+      cycleStartRef.current = Date.now();
+      transitionRef.current = false;
+      preloadRef.current = null;
+    };
+
+    nextImage.onerror = () => {
+      if (preloadRef.current !== nextImage) return;
+
+      transitionRef.current = false;
+        cycleStartRef.current = Date.now();
+        setProgress(0);
+      preloadRef.current = null;
+    };
+
+    nextImage.src = SLIDES[nextIndex].src;
+  }, []);
 
   /* =========================================================
      AUTO SLIDE + PROGRESS
@@ -43,37 +86,41 @@ export default function Hero() {
   useEffect(() => {
     if (paused) return;
 
-    const startTime = Date.now();
+    mountedRef.current = true;
+    cycleStartRef.current = Date.now();
 
     const timer = setInterval(() => {
-      const elapsed = Date.now() - startTime;
+      const elapsed = Date.now() - cycleStartRef.current;
       const percentage = Math.min((elapsed / SLIDE_MS) * 100, 100);
+
+      if (transitionRef.current) return;
 
       setProgress(percentage);
 
       if (percentage >= 100) {
-        setPrev(index);
-
-        setIndex((current) => {
-          return (current + 1) % SLIDES.length;
-        });
-
-        setProgress(0);
+        transitionTo((indexRef.current + 1) % SLIDES.length);
       }
     }, 30);
 
-    return () => clearInterval(timer);
-  }, [index, paused]);
+    return () => {
+      clearInterval(timer);
+      mountedRef.current = false;
+      transitionRef.current = false;
+
+      if (preloadRef.current) {
+        preloadRef.current.onload = null;
+        preloadRef.current.onerror = null;
+        preloadRef.current.src = "";
+        preloadRef.current = null;
+      }
+    };
+  }, [paused, transitionTo]);
 
   /* =========================================================
      MANUAL SLIDE
      ========================================================= */
   const goTo = (i) => {
-    if (i === index) return;
-
-    setPrev(index);
-    setIndex(i);
-    setProgress(0);
+    transitionTo(i);
   };
 
   const slide = SLIDES[index];
@@ -87,7 +134,7 @@ export default function Hero() {
       {/* =====================================================
           HERO IMAGE
           ===================================================== */}
-      <div className="relative w-full bg-black/5">
+      <div className="relative w-full">
         {/* Active image */}
         <motion.img
           key={`active-${index}`}
@@ -101,6 +148,7 @@ export default function Hero() {
           }}
           className="
             block
+            relative
             h-auto
             max-h-[80vh]
             w-full
@@ -108,6 +156,14 @@ export default function Hero() {
             object-center
           "
           loading="eager"
+          onError={() => {
+            // Keep the previous loaded image visible if the active request fails.
+            if (prev >= 0) {
+              indexRef.current = prev;
+              setIndex(prev);
+              setPrev(-1);
+            }
+          }}
         />
 
         {/* Previous image for crossfade */}
